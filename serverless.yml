@@ -1,0 +1,35 @@
+plugins:
+  - serverless-python-requirements
+
+service: letshang
+
+provider:
+  name: aws
+  runtime: python3.7
+
+functions:
+  testing:
+    handler: handler.testing
+    events:
+      - http:
+          path: testing
+          method: get
+  register:
+    handler: handler.register
+    events:
+      - http:
+          path: register
+          method: post
+  get_users:
+    handler: handler.get_users
+    events:
+      - http:
+          path: get_users
+          method: get
+  login:
+    handler: handler.login
+    events:
+      - http:
+          path: login
+          method: post
+
